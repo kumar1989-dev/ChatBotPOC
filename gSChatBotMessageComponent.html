@@ -1,0 +1,27 @@
+<template>
+    <template if:true={isAgent}>
+        <div class={messageStyle}>
+            <lightning-formatted-rich-text
+                value={msgValue}>
+            </lightning-formatted-rich-text>
+            
+            <div > {caseStatusCheck}</div>
+        </div>
+    </template>
+
+    <template if:false={isAgent}>
+        <div class={messageStyle}>
+            <lightning-formatted-rich-text
+                value={msgValue}>
+            </lightning-formatted-rich-text>
+            
+            <div >{caseStatusCheck}</div>
+        </div>
+    </template>
+
+    <template if:true={showSpinner}>
+        <div class="exampleHolder">
+            <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+        </div>
+    </template>
+</template>
